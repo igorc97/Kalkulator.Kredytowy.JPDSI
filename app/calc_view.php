@@ -6,18 +6,31 @@ require_once dirname(__FILE__).'/../config.php'; ?>
 <head>
 <meta charset="utf-8" />
 <title>Kalkulator kredytowy</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 </head>
 <body>
 
+<div style="width:90%; margin: 2em auto;">
+            <style scoped="">
+                .button-logout{
+                    color: white;
+                    border-radius: 4px;
+                    background: rgb(150, 3, 30);
+                }
+            </style>
+            <a href="<?php print(_APP_ROOT); ?>/app/secured2.php" class="pure-button">Przejdź do drugiej strony</a>
+            <a href="<?php print(_APP_ROOT); ?>/app/security/logout.php" class="button-logout pure-button">Wyloguj</a>
+        </div>
+
 <form action="<?php print(_APP_URL);?>/app/calc.php" method="post">
 	<label for="id_x">Kwota: </label>
-	<input id="id_x" type="text" name="x" value="<?php print($x); ?>" /><br />
+	<input id="id_x" type="text" name="x" value="" /><br />
 
     <label for="id_z">Na ile lat?: </label>
-    <input id="id_z" type="text" name="z" value="<?php print($z); ?>" /><br />
+    <input id="id_z" type="text" name="z" value="" /><br />
 
     <label for="id_y">Oprocentowanie: </label>
-    <input id="id_y" type="text" name="y" value="<?php print($y); ?>" /><br />
+    <input id="id_y" type="text" name="y" value="" /><br />
 	<br/>
 	<input type="submit" value="Oblicz" />
 </form>
